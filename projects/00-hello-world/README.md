@@ -19,4 +19,4 @@ This project is a "Follow Card" UI, inspired by X (formerly Twitter), developed 
 
 This project lays the foundation for more complex React applications by focusing on efficient rendering, modular components, and performance optimization. 🚀
 
-![Project Image](./public/project.jpg)
+![Project Image](./public/project.png)
