@@ -3,11 +3,8 @@
     align-items: center;
     justify-content: space-between;
     background: lch(21.47% 29.5 27.09 / 0);
-    border: 1px solid #25334123;
-    border-radius: 8px;
     padding: 5px;
     width: 300px;
-    box-shadow: 0px 4px 8px rgba(52, 52, 52, 0.174);
     font-family: system-ui;
     color: #ffffff;
 }
