@@ -1,12 +1,22 @@
-# React + Vite
+# Follow Card UI – My First React Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a "Follow Card" UI, inspired by X (formerly Twitter), developed as my first hands-on experience with React and modern frontend development. It showcases my understanding of React components, JSX, state management, and rendering techniques.
 
-Currently, two official plugins are available:
+## Key Features & Concepts Applied
+- ✅ **Component-based architecture** – The UI is structured using reusable React components.
+- ✅ **Vite configuration** – The project was bootstrapped with Vite, ensuring fast build times and modern tooling support.
+- ✅ **SWC for optimization** – The project leverages SWC (Speedy Web Compiler) for faster transpilation.
+- ✅ **React.Fragment & Children** – Used to group elements without adding unnecessary nodes to the DOM.
+- ✅ **Dynamic rendering with arrays** – The list of users is stored as an array and injected dynamically into the UI using `.map()`.
+- ✅ **Key prop usage** – Ensured optimized rendering by assigning unique keys when mapping through components.
+- ✅ **Custom components** – The `FollowCard` component encapsulates the UI and behavior of a follow button similar to X.
+- ✅ **Project structure & Root Component** – Implemented a clear folder structure and a well-defined root component for maintainability.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- 🔹 **React 18** (Functional Components)
+- 🔹 **Vite** (Lightning-fast dev server)
+- 🔹 **CSS Modules / Tailwind CSS** (For styling)
 
-## Expanding the ESLint configuration
+This project lays the foundation for more complex React applications by focusing on efficient rendering, modular components, and performance optimization. 🚀
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+![Project Image](./public/project.jpg)

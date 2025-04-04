@@ -1,22 +1,11 @@
-# Follow Card UI – My First React Project
+# Learning React 🚀
 
-This project is a "Follow Card" UI, inspired by X (formerly Twitter), developed as my first hands-on experience with React and modern frontend development. It showcases my understanding of React components, JSX, state management, and rendering techniques.
+Welcome to my **Learning React** repository! 🎉  
+This repository documents my journey as I explore and build projects using **React**. Each project represents a new concept or feature I’m learning, from fundamentals to more advanced topics.
 
-## Key Features & Concepts Applied
-- ✅ **Component-based architecture** – The UI is structured using reusable React components.
-- ✅ **Vite configuration** – The project was bootstrapped with Vite, ensuring fast build times and modern tooling support.
-- ✅ **SWC for optimization** – The project leverages SWC (Speedy Web Compiler) for faster transpilation.
-- ✅ **React.Fragment & Children** – Used to group elements without adding unnecessary nodes to the DOM.
-- ✅ **Dynamic rendering with arrays** – The list of users is stored as an array and injected dynamically into the UI using `.map()`.
-- ✅ **Key prop usage** – Ensured optimized rendering by assigning unique keys when mapping through components.
-- ✅ **Custom components** – The `FollowCard` component encapsulates the UI and behavior of a follow button similar to X.
-- ✅ **Project structure & Root Component** – Implemented a clear folder structure and a well-defined root component for maintainability.
+### What you'll find here:
+- ✅ Hands-on projects with React
+- ✅ Best practices and real-world applications
+- ✅ Progressive learning, from beginner to advanced
 
-## Tech Stack
-- 🔹 **React 18** (Functional Components)
-- 🔹 **Vite** (Lightning-fast dev server)
-- 🔹 **CSS Modules / Tailwind CSS** (For styling)
-
-This project lays the foundation for more complex React applications by focusing on efficient rendering, modular components, and performance optimization. 🚀
-
-![Project Image](./public/project.jpg)
+Feel free to check out my progress, give feedback, or collaborate! 🚀
