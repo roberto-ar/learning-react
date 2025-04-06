@@ -1,0 +1,38 @@
+# Node modules
+/node_modules/
+
+# Build outputs
+/build/
+/dist/
+
+# Optional npm cache directory
+.npm/
+
+# Logs
+*.log
+
+# Debugger
+.vscode/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Next.js build outputs (if using Next.js)
+.next/
+
+# Testing outputs
+/coverage/
+
+# OS-specific files
+.DS_Store        # macOS
+Thumbs.db        # Windows
+
+# IDE configuration files
+.idea/
+.vscode/
+
+# npm package-lock
+package-lock.json
+yarn.lock

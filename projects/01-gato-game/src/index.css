@@ -1,0 +1,145 @@
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: #c0caf5;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png'); /* patrón de estrellas suave */
+  background-repeat: repeat;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.board {
+  width: fit-content;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.board h1 {
+  color: #cdd6f4;
+  margin-bottom: 16px;
+  text-shadow: 0 0 10px #7aa2f7;
+}
+
+.board button {
+  padding: 8px 12px;
+  margin: 25px;
+  background: transparent;
+  border: 2px solid #7aa2f7;
+  color: #7aa2f7;
+  width: 100px;
+  border-radius: 5px;
+  transition: 0.3s;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(122, 162, 247, 0.4);
+}
+
+.board button:hover {
+  background: #7aa2f7;
+  color: #1e1e2e;
+  box-shadow: 0 0 20px #7aa2f7;
+}
+
+.board .game {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.turn {
+  display: flex;
+  justify-content: center;
+  margin: 15px auto;
+  width: fit-content;
+  position: relative;
+  border-radius: 10px;
+}
+
+.turn .square,
+.winner .square {
+  width: 70px;
+  height: 70px;
+  pointer-events: none;
+  border-color: transparent;
+  font-size: 28px;
+}
+
+.square.is-selected {
+  color: #fff;
+  background: rgba(122, 162, 247, 0.3);
+  box-shadow: 0 0 10px rgba(122, 162, 247, 0.6);
+}
+
+.winner {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.winner .text {
+  background: #1e1e2e;
+  height: 300px;
+  width: 320px;
+  border: 2px solid #7aa2f7;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 0 25px #7aa2f7;
+}
+
+.winner .win {
+  margin: 0 auto;
+  width: fit-content;
+  border-radius: 10px;
+  display: flex;
+  gap: 15px;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #7aa2f7;
+  border-radius: 5px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 48px;
+  background: #1a1b26;
+  color: #c0caf5;
+  transition: 0.2s ease;
+}
+
+.square:hover {
+  box-shadow: 0 0 12px #7aa2f7;
+}
