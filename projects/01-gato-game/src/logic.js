@@ -19,3 +19,8 @@ const isWinner = ({board}) => {
     })
     return newWinner.find(winner => winner != null);
   }
+
+
+  const changeCharacter = ({}) => {
+
+  }

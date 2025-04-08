@@ -143,3 +143,10 @@ body {
 .square:hover {
   box-shadow: 0 0 12px #7aa2f7;
 }
+.characters{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px auto;
+  width: fit-content;
+}

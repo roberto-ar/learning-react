@@ -6,25 +6,23 @@ import { BoardGame } from './components/Board.jsx'
 import { TURNS } from './constants.js'
 import { isEmpaty, isWinner } from './logic.js'
 import { WinnerModal } from './components/WinnerModal.jsx'
+import { startGameStorage, startTurnStorage, resetGameStorage, saveGameStorage } from './storage/storage.js'
 
 //componente principal
 function App() {
   const [turn, setTurn] = useState(() => {
-    const turnFromStorage = window.localStorage.getItem('turn');
-    return turnFromStorage ? turnFromStorage : TURNS.X;
+    return startTurnStorage();
   })
 
   const [board, setBoard] = useState(() => {
-    const boardFromStorage = window.localStorage.getItem('board');
-    return boardFromStorage ? JSON.parse(boardFromStorage) : Array(9).fill(null);
+    return startGameStorage();
   });   
 
   const [winner, setWinner] = useState(null); 
 
   const resetGame = () => {
     setBoard(Array(9).fill(null));
-    localStorage.removeItem('board');
-    localStorage.removeItem('turn');
+    resetGameStorage();
     setWinner(null);
     setTurn(TURNS.X);
   }
@@ -45,8 +43,7 @@ function App() {
       console.log('El juego ha terminado en empate');
       setWinner(false);
     }
-    localStorage.setItem('board', JSON.stringify(newBoard));
-    localStorage.setItem('turn', turn == TURNS.X ? TURNS.O : TURNS.X);
+    saveGameStorage({board: newBoard, turn});
     setBoard(newBoard);
     setTurn(turn === TURNS.X ? TURNS.O : TURNS.X);
   }
