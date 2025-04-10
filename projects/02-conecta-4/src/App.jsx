@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { CHARACTERS, board } from './constants/constants.js'
 import './App.css'
+import { saveGameStorage, startTurnStorage, startGameStorage, resetGameStorage} from './storage.js'
 import { GameBoard } from './components/GameBoard.jsx'
 import { Players } from './components/Players.jsx'
 import { isWinner, isTie } from './logic.js'
@@ -8,9 +9,10 @@ import { WinnerModal } from './components/WinnerModal.jsx'
 //const newBoard = gameBoard.map(row => [...row]);
 
 function App() {
-  const [gameBoard, setGameBoard] = useState(board)
+  const [gameBoard, setGameBoard] = useState(startGameStorage(board));
   const [availableCells, setAvailableCells] = useState([0,0,0,0,0,0,0])
-  const [turn, setTurn] = useState(CHARACTERS.X);
+  const [turn, setTurn] = useState(startTurnStorage());
+
   const [winner, setWinner] = useState(null);
 
   const updateBoard = (col, availableCell) => {
@@ -20,16 +22,7 @@ function App() {
     setTurn(turn == CHARACTERS.X ? CHARACTERS.O : CHARACTERS.X);
     setGameBoard(newBoard);
   }
-  const resetGame = ()=>{
-    setTurn(CHARACTERS.X);
-    setGameBoard(board);
-    setWinner(null);
-  }
 
-  useEffect(()=>{
-    console.log(winner);
-  }, [winner]);
-  
   useEffect(() =>{
     const newWinner = isWinner({board : gameBoard.flat()});
     if(newWinner) setWinner(newWinner)
@@ -54,7 +47,17 @@ function App() {
     });
     setAvailableCells(cellsAvailable);
   }, [gameBoard])
+  
+  useEffect(() =>{ //saveGame
+    saveGameStorage({board: gameBoard, turn});
+  }, [gameBoard]); 
 
+  const resetGame = ()=>{
+    resetGameStorage();
+    setTurn(CHARACTERS.X);
+    setGameBoard(board);
+    setWinner(null);
+  }
   
   return (
     <main className="GameWrapper">
