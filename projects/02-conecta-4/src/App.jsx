@@ -4,6 +4,7 @@ import './App.css'
 import { GameBoard } from './components/GameBoard.jsx'
 import { Players } from './components/Players.jsx'
 import { isWinner, isTie } from './logic.js'
+import { WinnerModal } from './components/WinnerModal.jsx'
 //const newBoard = gameBoard.map(row => [...row]);
 
 function App() {
@@ -18,6 +19,11 @@ function App() {
     newBoard[col][availableCell] = turn;
     setTurn(turn == CHARACTERS.X ? CHARACTERS.O : CHARACTERS.X);
     setGameBoard(newBoard);
+  }
+  const resetGame = ()=>{
+    setTurn(CHARACTERS.X);
+    setGameBoard(board);
+    setWinner(null);
   }
 
   useEffect(()=>{
@@ -51,9 +57,10 @@ function App() {
 
   
   return (
-    <div className="GameWrapper">
+    <main className="GameWrapper">
       <h1>Conecta 4</h1>
-      <>
+      <button className="btn" onClick={resetGame}>Reset Game</button>
+      
       <GameBoard 
       GameBoard={gameBoard} 
       updateBoard={updateBoard}
@@ -61,8 +68,8 @@ function App() {
       />
 
       <Players Players={CHARACTERS} Turn={turn}/>
-    </>
-    </div>
+      <WinnerModal resetGame={resetGame} winner={winner}/>
+    </main>
   )
 }
 
