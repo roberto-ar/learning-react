@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import confetti from 'canvas-confetti'
 import { Square } from './components/Square.jsx'
@@ -47,6 +47,9 @@ function App() {
     setBoard(newBoard);
     setTurn(turn === TURNS.X ? TURNS.O : TURNS.X);
   }
+  useEffect(() =>{
+    console.log("XD")
+  })
 
   return (
     <main className='board'>

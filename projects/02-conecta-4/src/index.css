@@ -1,0 +1,129 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; 
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  background-size: cover;
+  color: #333; 
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  padding: 20px; 
+}
+
+
+.GameWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; 
+  width: 100%;
+}
+
+
+.Player {
+  display: inline-block; 
+  font-size: 3rem;
+  font-weight: bold;
+  color: #333;
+  padding: 10px 20px;
+  margin: 0 10px 15px 10px; 
+  background: #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.Player.isSelected {
+  font-size: 4rem;
+  background: #4e4e4e50;
+}
+
+
+.game-board {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding: 16px;
+  background: #2c5282;
+  border-radius: 12px;
+  border: 8px solid #8b4513;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+}
+
+
+.cell {
+  margin-top: 5px;
+  width: 60px;
+  height: 60px;
+  background: #ffffff;
+  border: 2px solid #cccccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #58a6ff;
+  transition: background 0.2s ease, transform 0.2s ease;
+  cursor: pointer; 
+}
+
+
+.col:hover .cell.available {
+  background: #b0d3fa;
+  transform: scale(1.05); 
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  } 
+}
+
+.game-board {
+  animation: fadeIn 0.5s ease-out; 
+}
+
+.GameWrapper > div:not(.game-board) {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+
+@media (max-width: 768px) {
+  .cell {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cell {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .Player {
+    font-size: 1rem;
+    padding: 8px 15px;
+  }
+}
